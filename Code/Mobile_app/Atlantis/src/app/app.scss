@@ -1,0 +1,24 @@
+// App Styles
+// ----------------------------------------------------------------------------
+// Put style rules here that you want to apply to the entire application. These 
+// styles are for the entire app and not just one component. Additionally, this 
+// file can hold Sass mixins, functions, and placeholder classes to be imported 
+// and used throughout the application.
+
+.buttonStack {
+    padding: 0.3em 1em;
+}
+
+.classicDiv {
+    padding: 0 1em;
+}
+
+.inputField {
+    background-color: lightgray;
+    border-radius: 5px;
+    margin: 0.2em 1em 0em 1em;
+}
+
+.inputDiv {
+    margin: 2em 0em;
+}

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Hello There !
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="text-align: center">
+  <h1>Welcome to your Algeco overview</h1>
+  <div class="buttonStack">
+
+    <div [hidden]="!checkStatus" class="inputDiv">
+      <div class="inputField">
+        <ion-input placeholder="Username"></ion-input>
+      </div>
+      <div class="inputField">
+        <ion-input placeholder="Password"></ion-input>
+      </div>
+      <ion-button (click)="signIn()">Sign in</ion-button>
+    </div>
+
+    <ion-button [hidden]="checkStatus" expand="block" (click)="revealSignIn()">Connect</ion-button>
+
+    <div [hidden]="checkStatus" class="inputDiv">
+      <div class="inputField">
+        <ion-input placeholder="Username"></ion-input>
+      </div>
+      <div class="inputField">
+        <ion-input placeholder="Password"></ion-input>
+      </div>
+      <div class="inputField">
+        <ion-input placeholder="Verify password"></ion-input>
+      </div>
+      <ion-button (click)="signUp()">Sign up</ion-button>
+    </div>
+
+    <ion-button [hidden]="!checkStatus" expand="block" (click)="revealSignUp()">Create account</ion-button>
+  </div>
+</ion-content>

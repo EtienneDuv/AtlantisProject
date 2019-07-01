@@ -1,0 +1,26 @@
+image: microsoft/dotnet:latest
+
+stages:
+  - build
+  - test
+  - deploy
+
+before_script:
+  - "cd ProjectCode/AtlantisConsole"
+  - "dotnet restore"
+
+build:
+  stage: build
+  script:
+    - "dotnet build"
+
+test:
+  stage: test
+  script:
+    - cd UnitTestsNet
+    - dotnet test
+
+deploy:
+  stage: deploy
+  script:
+    - echo 'deploy'

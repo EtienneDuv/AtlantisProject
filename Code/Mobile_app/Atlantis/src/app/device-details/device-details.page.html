@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>    
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Device Details Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center">
+    <h2><span>{{ deviceInfo.name }}:</span></h2>
+    <span>{{ deviceInfo.metric.name }}<span *ngIf="deviceInfo.metric.unit !== ''"> ({{ deviceInfo.metric.unit }})</span></span>
+  </div>
+
+<div *ngIf="deviceInfo.metric.unit !== ''">
+  <div class="classicDiv">
+    <h5>Last measured metric: {{ lastMeasuredMetric }}</h5>  
+  </div>
+
+
+  <ion-segment style="padding: 0 0.3em">
+    <ion-segment-button (click)="changeRequest('button', 'avg')" checked>
+      <ion-label>Avg</ion-label>
+    </ion-segment-button>
+    <ion-segment-button (click)="changeRequest('button', 'max')">
+      <ion-label>Max</ion-label>
+    </ion-segment-button>
+    <ion-segment-button (click)="changeRequest('button', 'min')">
+      <ion-label>Min</ion-label>
+    </ion-segment-button>
+    <ion-segment-button (click)="changeRequest('button', 'crit')" color="danger">
+      <ion-label>Crit</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  
+  <ion-item>
+    <ion-range dualKnobs="true" pin="true" [min]=range.min [max]=range.max [(ngModel)]="time" (ionChange)="changeRequest('range')">
+      <ion-icon slot="start" small name="time"></ion-icon>
+    </ion-range>
+  </ion-item>
+  
+  <div class="ion-text-center classicDiv">
+    <ion-button expand="full" (click)="submit()">Submit request</ion-button>
+    <p>{{ method }} over <span *ngIf="timeMin == 0">last </span>{{ timeMax - timeMin }} hours</p>
+  </div>
+</div>
+  
+</ion-content>

@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>List all users</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item button *ngFor="let user of users;" [routerLink]="['/list-user-devices/' + user.index]"
+      routerDirection="forward">
+      <span slot="start">#{{ user.index+1 }}</span> {{ user.name }}
+    </ion-item>
+  </ion-list>
+</ion-content>

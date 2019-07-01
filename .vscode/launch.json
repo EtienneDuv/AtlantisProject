@@ -1,0 +1,36 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "DevApp serve",
+            "type": "cordova",
+            "request": "launch",
+            "target": "chrome",
+            "platform": "serve",
+            "devServerAddress": "localhost",
+            "port": 8090,
+            "sourceMaps": true,
+            "ionicLiveReload": true,
+            "cwd": "${workspaceFolder/../ProjectCode//Mobile_app/Atlantis",
+            "runArguments": [
+                "port=8090",
+                ""
+            ],
+        },
+        {
+            "name": "DevApp serve 2",
+            "type": "cordova",
+            "request": "launch",
+            "target": "chrome",
+            "platform": "serve",
+            "cwd": "${workspaceFolder/../ProjectCode//Mobile_app/Atlantis",
+            "runArguments": [
+                "port=8090",
+                "--devapp",
+            ],
+        }
+    ]
+}

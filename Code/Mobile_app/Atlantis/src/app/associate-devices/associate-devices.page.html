@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Associate-devices</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+<ion-list>
+    <ion-item button *ngFor="let user of users;" [routerLink]="['/select-devices/' + user.index]" routerDirection="forward">
+      {{ user.name }}
+    </ion-item>
+</ion-list>
+</ion-content>

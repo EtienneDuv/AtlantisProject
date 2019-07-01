@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>hub</ion-title>
+    <ion-toggle color="secondary" (ionChange)="toggleAdmin()" slot="end"></ion-toggle>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1 style="text-align: center">This is your hub page</h1>
+  <div class="buttonStack">
+    <ion-button expand="block" [routerLink]="'/user-devices'">See my devices</ion-button>
+    <ion-button [hidden]="!isAdmin" expand="block" [routerLink]="'/list-users'" color="secondary">List users</ion-button>    
+    <ion-button [hidden]="!isAdmin" expand="block" [routerLink]="'/associate-devices'" color="secondary">Add devices to user</ion-button>    
+  </div>
+</ion-content>
