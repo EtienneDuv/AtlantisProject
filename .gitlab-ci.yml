@@ -6,7 +6,7 @@ stages:
   - deploy
 
 before_script:
-  - "cd ProjectCode/AtlantisConsole"
+  - "cd Code/AtlantisConsole"
   - "dotnet restore"
 
 build:
