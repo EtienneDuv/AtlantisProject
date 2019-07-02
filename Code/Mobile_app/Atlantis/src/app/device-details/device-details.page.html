@@ -14,10 +14,16 @@
   </div>
 
 <div *ngIf="deviceInfo.metric.unit !== ''">
-  <div class="classicDiv">
-    <h5>Last measured metric: {{ lastMeasuredMetric }}</h5>  
-  </div>
-
+<ion-list>
+  <ion-item>
+    <span>Last measured metric:</span>
+    <span slot="end">{{ lastMetric }}</span>
+  </ion-item>
+  <ion-item>
+    <span>Last calculated metric:</span>
+    <span slot="end">{{ lastCalculatedMetric }}</span>
+  </ion-item>
+</ion-list>
 
   <ion-segment style="padding: 0 0.3em">
     <ion-segment-button (click)="changeRequest('button', 'avg')" checked>

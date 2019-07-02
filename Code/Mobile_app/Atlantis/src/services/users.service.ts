@@ -32,7 +32,6 @@ export class UsersService {
       this.users[id] = ({
         index: this.users[id].index,
         name: this.users[id].name,
-        surname: this.users[id].surname,
         devices: this.devicesService.generateDevice(5),
       });
       // console.log(this.users[id]);
@@ -48,7 +47,6 @@ export class UsersService {
       this.users.push({
         index: index,
         name: 'User#' + index,
-        surname: "surname",
       });
     }
   }
