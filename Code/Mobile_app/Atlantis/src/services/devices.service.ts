@@ -65,4 +65,5 @@ export class DevicesService {
     });
     return this.selectedDevice
   }
+
 }

@@ -1,13 +1,26 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DevicesService } from '../../services/devices.service';
+import { ApiMobileService } from '../../services/api-mobile.service'
 
 @Component({
   selector: 'app-device-details',
   templateUrl: './device-details.page.html',
   styleUrls: ['./device-details.page.scss'],
 })
-export class DeviceDetailsPage implements OnInit {
+export class DeviceDetailsPage {
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private devices: DevicesService,
+    public api: ApiMobileService,
+    public router: Router,
+    ) {
+    this.timeMin = this.time.lower
+    this.timeMax = this.time.upper
+    this.changeRequest('button', 'avg');
+    this.changeRequest('range', null);
+  }
 
   public possibleMethods = {
     'avg': 'Average',
@@ -16,9 +29,9 @@ export class DeviceDetailsPage implements OnInit {
     'crit': 'Critical',
   }
 
-  private slug: string;
-  public deviceInfo: any;
-  public lastMeasuredMetric: any = "Last metric";
+
+  public slug = parseInt(this.activatedRoute.snapshot.paramMap.get('deviceId'))
+  public deviceInfo = this.devices.getSelectedDevice(this.slug)[0];
 
   public range: any = {min: 0, max: 48};
   public time: any = { lower: 0, upper: 12 };
@@ -26,18 +39,8 @@ export class DeviceDetailsPage implements OnInit {
   public timeMax: any;
   public request: any = {};
   public method: string = this.possibleMethods['avg'];
-
-  constructor(private activatedRoute: ActivatedRoute, private devices: DevicesService, private router: Router, private ngZone: NgZone) { 
-    this.timeMin = this.time.lower
-    this.timeMax = this.time.upper
-    this.changeRequest('button', 'avg');
-    this.changeRequest('range', null);
-  }
-
-  ngOnInit(): void {
-    this.slug = this.activatedRoute.snapshot.paramMap.get('deviceId')
-    this.deviceInfo = this.devices.getSelectedDevice(this.slug)[0];
-  }
+  public lastMetric: string = this.api.getLastMetric(this.slug);
+  public lastCalculatedMetric: string = this.api.getLastCalculatedMetric(this.slug);
 
   /**
    * Change the request body
@@ -60,8 +63,8 @@ export class DeviceDetailsPage implements OnInit {
 
   submit(){
     console.log(this.request);
-    this.ngZone.run(() => this.router.navigate(['hub'])).then();
     this.router.navigate(['/display-graph'])
+    // console.log(this.lastMetric, this.lastCalculatedMetric)
   }
 
 }

@@ -8,5 +8,26 @@
 </ion-header>
 
 <ion-content>
-<h2 class="ion-text-center">Not implemented yet</h2>
+<h2 class="ion-text-center">Select new device for {{ userInfo.name }}</h2>
+<div class="classicDiv">
+  <ion-input placeholder="Type device name" [(ngModel)]="name" required></ion-input>
+  <ion-item>
+    <ion-label>Sensor type</ion-label>
+    <ion-select multiple="false" cancelText="Cancel" okText="Go!" [(ngModel)]="type" >
+      <ion-select-option value="temperature">Temperature</ion-select-option>
+      <ion-select-option value="humidity">Humidity</ion-select-option>
+      <ion-select-option value="gps">GPS</ion-select-option>
+      <ion-select-option value="presence">Presence</ion-select-option>
+      <ion-select-option value="light">Light</ion-select-option>
+      <ion-select-option value="sound">Sound</ion-select-option>
+      <ion-select-option value="led">LED</ion-select-option>
+      <ion-select-option value="beeper">Beeper</ion-select-option>
+    </ion-select>
+  </ion-item>
+</div>
+
+<div class="classicDiv">
+  <ion-button expand="block" (click)="submit()">submit</ion-button>
+</div>
+
 </ion-content>
