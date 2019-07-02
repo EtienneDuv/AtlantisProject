@@ -16,7 +16,7 @@ namespace AtlantisConsole.Service
         private readonly DataContext db = new DataContext();
         private readonly HttpClient httpClient = new HttpClient();
         private ComplexCalculation complexCalculation = new ComplexCalculation();
-        private const string JavaIp= "http://10.169.50.9:8080/";
+        private const string JavaIp= "http://192.168.42.107:8080/";
 
         //public void PostMetric(Metric metric)
         //{
