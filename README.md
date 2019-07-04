@@ -24,7 +24,7 @@ A dedvice can measure temperature, pressure, light...
 >ionic serve [--devapp]
 ```
 
-`--devappp` allows you to see the application on a phone, using (Ionic Devapp)[https://play.google.com/store/apps/details?id=io.ionic.devapp&hl=fr] application.
+`--devapp` allows you to see the application on a phone, using [Ionic Devapp](https://play.google.com/store/apps/details?id=io.ionic.devapp&hl=fr) application.
 
 *There initially was a .NET and JEE platform during the project but I decided to delete them, as I did not do it*
 ![Global Component diagram](uml/globalComponent)
