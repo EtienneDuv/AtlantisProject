@@ -1,9 +1,9 @@
-#Atlantis Project
+# Atlantis Project
 
 This scholar project's goal was to create an Ionic application to see and manage devices and users. 
 A dedvice can measure temperature, pressure, light... 
 
-##Atlantis application structure**
+## Atlantis application structure
 ```
 .
 └── Home
@@ -18,7 +18,7 @@ A dedvice can measure temperature, pressure, light...
                 └── Device-details
 ```
 
-##Install application**
+## Install application**
 ```
 >npm install
 >ionic serve [--devapp]
