@@ -18,7 +18,7 @@ A dedvice can measure temperature, pressure, light...
                 └── Device-details
 ```
 
-## Install application**
+## Install application
 ```
 >npm install
 >ionic serve [--devapp]
@@ -28,6 +28,7 @@ A dedvice can measure temperature, pressure, light...
 
 *There initially was a .NET and JEE platform during the project but I decided to delete them, as I did not do it*
 ![Global Component diagram](uml/globalComponent.jpg)
+
 <!-- 
 #Home
 ##Hub
@@ -39,13 +40,6 @@ A dedvice can measure temperature, pressure, light...
 ###[A] List-users
 ####List-user-devices
 #####Device-details
-
-
-#getUserDevices(userId) -> [device, device, ...]
-#getSelectedDevice(deviceId) -> {id, name, {metricName, metricUnit}}
-#getLastMetric(deviceId) -> pas implémenté
-#sendCommand(deviceId, command) -> pas implémenté
-
 
 Name: Ascii Tree Generator
 Description: A VS Code extension to generate ascii tree of directories or formatting selected text to tree strings.
