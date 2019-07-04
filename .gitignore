@@ -1,8 +1,0 @@
-# Ignore all mobiles apps except Atlantis
-ProjectCode/Mobile_app/Example
-ProjectCode/Mobile_app/Example2
-ProjectCode/Mobile_app/Example3
-ProjectCode/Mobile_app/testApp2
-
-# Ignore
-.vs/
