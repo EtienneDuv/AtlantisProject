@@ -1,7 +1,10 @@
 # Atlantis Project
 
 This scholar project's goal was to create an Ionic application to see and manage devices and users. 
-A dedvice can measure temperature, pressure, light... 
+A dedvice can measure temperature, pressure, light...
+
+## Technologies
+- Ionic (web languages)
 
 ## Atlantis application structure
 ```
